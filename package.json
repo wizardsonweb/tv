@@ -1,0 +1,15 @@
+{
+  "name": "nodestudy",
+  "version": "1.0.0",
+  "description": "just a study",
+  "main": "index.js",
+  "scripts": {
+    "install": "cd dev && npm install && npm fund && cd client && npm install && npm fund && echo run: npm run server||client",
+    "server": "cd dev && nodemon init.js",
+    "client": "cd client && nodemon init.js",
+    "test": "cd dev && nodemon init.js && cd client && nodemon init.js"
+  },
+  "keywords": ["study,node,terminal"],
+  "author": "Egon",
+  "license": "ISC"
+}
