@@ -7,11 +7,14 @@
         "start": "nodemon ./init.js",
         "test": "ECHO test"
     },
-    "keywords": ["study,node,terminal"],
+    "keywords": [
+        "study,node,terminal"
+    ],
     "author": "Egon",
     "license": "ISC",
     "dependencies": {
-        "three": "^0.150.1",
-        "ejs": "^3.1.9"
+        "react": "^18.2.0",
+        "react-router-dom": "^6.9.0",
+        "three": "^0.150.1"
     }
 }

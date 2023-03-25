@@ -4,7 +4,7 @@
   "description": "just a study",
   "main": "index.js",
   "scripts": {
-    "install": "cd dev && npm install && npm fund && cd client && npm install && npm fund && echo run: npm run server||client",
+    "install": "cd dev && npm install && cd db && node db.js && cd client && npm install && echo run: npm run server||client",
     "server": "cd dev && nodemon init.js",
     "client": "cd client && nodemon init.js",
     "test": "cd dev && nodemon init.js && cd client && nodemon init.js"
