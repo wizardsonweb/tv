@@ -12,23 +12,26 @@ const conf = {
 const db = mysql.createConnection(conf);
 
 //custom
-const hasIdentity = (req, res) => {
+const hasIdentity = (req, res, path) => {
     const isOK = req.session.loggedin === true;
     const url = req.url;
 
     if(!isOK){
-        res.redirect('/');
+        if(url !== '/') {
+            return res.redirect('/');
+        } else {
+            return res.sendFile(path + '/!_public/index.html');
+        }
     } else {
-        res.redirect(url.replace('/', ''));
+        return res.redirect(url.toString());
     }
 }
-
-const pages = [ '/', '/admin', '/user' ];
 
 module.exports =  {
     init: (app, dir) => {
         app.get('/', (req, res) => {
-            res.sendFile(dir + '/!_public/index.html');
+            hasIdentity(req, res, dir);
+
         })
         
         app.post('/auth', (req, res) => {
