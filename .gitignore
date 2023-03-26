@@ -1,0 +1,7 @@
+*package-lock.json
+node_modules
+*.ini
+desktop.ini
+.idea
+*.xml
+*.idea
