@@ -11,7 +11,7 @@ const path = require('path');
 const sql = fs.readFileSync(path.join(__dirname + '/db.sql')).toString();
 
 try {
-    return db.query(sql, (err, res) => {
+    db.query(sql, (err, res) => {
         if(err) throw err;
 
         if(res > 0) {

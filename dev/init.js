@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'static')));
 router.init(app, __dirname);
         
 app.get('*', function(req, res){
-  res.sendFile(__dirname + '/!_public/404.html');
+  res.sendFile(__dirname + '/public/404.html');
 });
 
 app.listen(port, (req, res) => {

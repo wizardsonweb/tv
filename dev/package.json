@@ -1,17 +1,16 @@
 {
     "name": "nodestudy",
     "version": "1.0.0",
+    "author": "Egon Adelsberger",
     "description": "just a study",
-    "main": "index.js",
+    "keywords": [
+        "node, terminal, jsx, mysql, three"
+    ],
+    "main": "init.js",
     "scripts": {
         "start": "nodemon ./init.js",
-        "test": "ECHO test"
+        "test": "echo test"
     },
-    "keywords": [
-        "study,node,terminal"
-    ],
-    "author": "Egon",
-    "license": "ISC",
     "devDependencies": {
         "chalk": "^2.0.0",
         "cors": "^2.8.5",
@@ -20,7 +19,8 @@
         "nodemon": "^2.0.22"
     },
     "dependencies": {
-        "ejs": "^3.1.9",
-        "mysql": "^2.18.1"
-    }
+        "mysql": "^2.18.1",
+        "react-jsx": "^1.0.0"
+    },
+    "license": "ISC"
 }
