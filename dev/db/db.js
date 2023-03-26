@@ -11,16 +11,16 @@ const path = require('path');
 const sql = fs.readFileSync(path.join(__dirname + '/db.sql')).toString();
 
 try {
-    return db.query(sql, (err, res) => {
-        if(err) throw err;
-
-        if(res > 0) {
-            return console.log('\n db created \n');
+    db.query(sql, (err, res) => {
+        if(err) {
+            console.log('\n db already exists \n');
+            process.exit();
         } else {
-            return console.log('\n db already exists \n');
+            console.log('\n database created \n');
+            process.exit();
         }
     });
 } catch(error) {
-    return console.log(error);
+    console.log('db.js: \n' + error);
 }
 

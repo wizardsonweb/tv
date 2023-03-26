@@ -1,7 +1,8 @@
+//imports
 const mysql = require('mysql');
-const path = require('path');
+const lib = require('./helpers/helpers');
 
-//DB settings
+//DB settings, sql
 const conf = {
     host:'localhost',
     user: 'root',
@@ -11,31 +12,15 @@ const conf = {
 };
 const db = mysql.createConnection(conf);
 
-//custom
-const hasIdentity = (req, res, path) => {
-    const isOK = req.session.loggedin === true;
-    const url = req.url;
-
-    if(!isOK){
-        if(url !== '/') {
-            return res.redirect('/');
-        } else {
-            return res.sendFile(path + '/!_public/index.html');
-        }
-    } else {
-        return res.redirect(url.toString());
-    }
-}
-
+//exports
 module.exports =  {
-    init: (app, dir) => {
-        app.get('/', (req, res) => {
-            hasIdentity(req, res, dir);
-
-        })
-        
+    init: (app) => {
         app.post('/auth', (req, res) => {
-            auth(req, res);
+            lib.auth(db, req, res);
         });
+
+        app.get('/test', (req, res) => {
+            res.send('wa wa wa')
+        })
     }
 }

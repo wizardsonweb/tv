@@ -1,0 +1,52 @@
+body, body *:not(a){
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
+}
+.fof {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #333 !important;
+    color: #e5e5e5 !important;
+}
+.fof h1 {
+    font-size: 7em;
+    font-weight: lighter;
+    letter-spacing: 10px;
+    transition: 1s ease-in-out;
+    animation: fof 1.5s ease-in-out infinite;
+}
+.fof a {
+    max-width: max-content;
+    margin: 30px auto;
+    padding: 10px 45px;
+    border: 2px solid #e5e5e5;
+    font-size: 1em;
+    text-decoration: none;
+    color: #e5e5e5;
+}
+
+.fof h4, .fof a {
+    opacity: 0.79;
+}
+.fof * {
+    width: 100%;
+    display: block;
+}
+@keyframes fof {
+    0% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.59;
+    }
+    100% {
+        opacity: 0.25;
+    }
+}

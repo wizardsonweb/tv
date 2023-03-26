@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui;
+  text-rendering: optimizeLegibility;
+  text-decoration: none;
+  text-shadow: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  white-space: normal;
+  word-break: break-word;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  height: 100%;
+  width: 100%;
+  max-width: 100vw;
+  scroll-behavior: smooth;
+}

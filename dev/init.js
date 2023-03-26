@@ -1,23 +1,24 @@
+const { exec } = require('child_process');
 const express = require('express');
+const app = express();
+const cors = require('cors');
 const session = require('express-session');
 const path = require('path');
-const cors = require('cors');
+//custom
 const router = require('./db/controller');
-
-const app = express();
 const port = 4307;
 
+//cors n other troubles
 app.use(cors());
 app.use(session({secret: 'secret', resave: true, saveUninitialized: true}));
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'static')));
 
-router.init(app, __dirname);
-        
-app.get('*', function(req, res){
-  res.sendFile(__dirname + '/!_public/404.html');
-});
+//router
+router.init(app);
 
-app.listen(port, (req, res) => {
-    console.log('\n Listening on port: ' + port + '.\n');
+//listen init
+app.listen(port, () => {
+  console.log('\n Listening on port: ' + port + '\n web: http://localhost:4307/ \n');
+  exec('start cmd.exe && cd client && npm start')
 });
