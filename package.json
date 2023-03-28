@@ -9,6 +9,7 @@
   "main": "/dev/init.js",
   "scripts": {
     "install": "cd dev && npm install && cd db && node db.js && cd ../client && npm install && cd .. && npm start",
+    "start": "cd dev && npm start",
     "server": "cd dev && npm start",
     "client": "cd dev/client && npm start"
   },

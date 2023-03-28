@@ -15,9 +15,6 @@ const db = mysql.createConnection(conf);
 //exports
 module.exports =  {
     init: (app) => {
-        app.post('/auth', (req, res) => {
-            lib.auth(db, req, res);
-        });
 
         app.get('/test', (req, res) => {
             res.send('wa wa wa')

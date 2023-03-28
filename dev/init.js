@@ -1,10 +1,9 @@
 const { exec } = require('child_process');
 const express = require('express');
 const app = express();
-const cors = require('cors');
 const session = require('express-session');
 const path = require('path');
-//custom
+const cors = require('cors');
 const router = require('./db/controller');
 const port = 4307;
 
@@ -12,7 +11,6 @@ const port = 4307;
 app.use(cors());
 app.use(session({secret: 'secret', resave: true, saveUninitialized: true}));
 app.use(express.urlencoded({extended: true}));
-app.use(express.static(path.join(__dirname, 'static')));
 
 //router
 router.init(app);
