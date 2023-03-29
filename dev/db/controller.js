@@ -15,9 +15,13 @@ const db = mysql.createConnection(conf);
 //exports
 module.exports =  {
     init: (app) => {
-
-        app.get('/test', (req, res) => {
-            res.send('wa wa wa')
-        })
+        app.get('/experience', (req, res) => {
+            let test = {
+                name: 'Company 1',
+                age: '1994 - 2013',
+                desc: 'lorem ipsum dolor sit amet'
+            }
+            res.send(test)
+        });
     }
 }
